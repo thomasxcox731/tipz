@@ -28,8 +28,10 @@ TipZ is a web app that allows users to log and track tips and mileage more effec
 ## ACCOUNT/TOTALS
 ![Account](./Sketches/Account.png)
 
-## API's to be used ##
-- MapBox API - Track distance traveled
+## Technologies to be used ##
+- MapBox API / Open Cage API - Track distance traveled / Route distance
+- D3.js - Data Visualization
+- Marmoset Hexels - Styling & Animation
 
 ## Project Management Software: TRELLO
 ![Trello Project Board](./Sketches/Trello.png)
