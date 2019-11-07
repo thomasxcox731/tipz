@@ -14,9 +14,19 @@ TipZ is a web app that allows users to log and track tips and mileage more effec
 3. Tips & Gratuity page - Input screen for tips/gratuity
 4. User Profile - Displays user info & mileage/tips totals
 
-![Image description](./200.png) ![Image description](./200.png)
+## HOME
+![Image description](./Sketches/Home.png)
 
-![Image description](./200.png) ![Image description](./200.png)
+## MILEAGE
+![Image description](./Sketches/Mileage.png)
+
+
+## TIPS
+![Image description](./Sketches/Tips.png)
+
+
+## ACCOUNT/TOTALS
+![Image description](./Sketches/Account.png)
 
 ## API's to be used ##
 - MapBox API - Track distance traveled
