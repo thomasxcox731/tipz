@@ -1,9 +1,9 @@
 # TipZ
 
 ## Team Members: ##
-- Tom Cox
-- Abhishu Mukherjee
-- Steve McMillen
+- Tom Cox - Database / MongoDB
+- Abhishu Mukherjee - Front-End / UI
+- Steve McMillen - API / Back-End
 
 ## Description:  ##
 TipZ is a web app that allows users to log and track tips and mileage more effectively. These totals can then be used on their tax returns to ensure people in the service/catering industry maximize deductions on their tax returns.
