@@ -42,6 +42,7 @@ TipZ is a web app that allows users to log and track tips and mileage more effec
 - Marmoset Hexels - Styling & Animation
 
 ## Project Management Software: TRELLO
+[LINK TO TRELLO BOARD](https://trello.com/b/figrSytG/project-3)
 ![Trello Project Board](./Sketches/Trello.png)
 
 
