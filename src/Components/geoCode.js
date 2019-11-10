@@ -1,37 +1,33 @@
-require('dotenv').config()
-const opencage = require('opencage-api-client');
-const express = require("express");
-const app = express();
-const PORT = process.env.PORT || 3001;
+// const express = require("express");
+// const app = express();
+// const PORT = process.env.PORT || 3001;
+// const opencage = require('opencage-api-client');
+// require('dotenv').config();
 
-var key = config.myApiKey;
+var apiKey = "AIzaSyCHZqKS_YadIq4eOAtVad2cxcHixlT6poI"
+var address = {
+  street: "77290 Michigan Dr",
+  city: "Palm Desert",
+  state: "CA"
+}
+var ip = "https://maps.googleapis.com/maps/api/geocode/json?address=" + address.street.split(" ").join("+") + ",+" + address.city.split(" ").join("+") + ",+" + address.state + "&sensor=false&key=" + apiKey;
 
-console.log(process.env.apiKey)
-
-app.listen(PORT, function() {
-  console.log(`🌎  ==> API Server now listening on http://localhost:${PORT} !`);
-});
-
-opencage.geocode({q: 'Theresienhöhe 11, München'}).then(data => {
-  console.log(JSON.stringify(data));
-  if (data.status.code == 200) {
-    if (data.results.length > 0) {
-      var place = data.results[0];
-      console.log(place.formatted);
-      console.log(place.geometry);
-      console.log(place.annotations.timezone.name);
-    }
-  } else if (data.status.code == 402) {
-    console.log('hit free-trial daily limit');
-  } else {
-    console.log('error', data.status.message);
-  }
-}).catch(error => {
-  console.log('error:', error.message);
-});
+// var ip = "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&sensor=false&key=AIzaSyCHZqKS_YadIq4eOAtVad2cxcHixlT6poI"
 
 
-// ... prints
-// Theresienhöhe 11, 80339 Munich, Germany
-// { lat: 48.1341651, lng: 11.5464794 }
-// Europe/Berlin
+$.ajax({
+  url: ip,
+  method: "GET"
+}).then(function (response) {
+console.log(response);
+})
+
+
+
+
+
+
+var url = "https://api.mapbox.com/optimized-trips/v1/mapbox/driving/-122.42,37.78;-122.45,37.91;-122.48,37.73?access_token=pk.eyJ1Ijoic2h0ZXZldG0iLCJhIjoiY2syM2V5c2huMHdiazNmcWMzbHd3ZXl5ZiJ9.rnLws1iCGFFsUGsted9fRw"
+
+console.log(url);
+console.log(ip);
