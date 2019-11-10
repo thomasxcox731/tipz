@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-console.log(process.env.REACT_APP_GOOGLE_API_KEY)
 class App extends Component {
 }
 function App() {
