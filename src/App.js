@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import NavTabs from "./components/NavTabs";
-import Home from "./components/pages/Home";
-import Mileage from "./components/pages/Mileage";
-import Tips from "./components/pages/Tips";
-import Account from "./components/pages/Account";
+import NavTabs from "./Components/NavTab/NavTabs";
+import Home from "./Components/pages/Home/Home";
+import Mileage from "./Components/pages/Mileage/Mileage";
+import Tips from "./Components/pages/tips/Tips";
+import Account from "./Components/pages/Account/Account";
 
 function App() {
   return (
