@@ -12,6 +12,12 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
+    <div class="card">
+        <h2>Please Enter Start Location: <br></h2>
+        Street:<input id="startStreet" class="input" type="text"><br>
+        City:<input id="startCity" class="input" type="text"><br>
+        State:<input id="startState" class="input" type="text"><br>
+    </div>
 
     <div id="page"></div>
     <div id="Stops">
@@ -25,15 +31,21 @@
         </select>
         <input id="submitStops" type="submit">
     </div>
-    <script>
 
+
+    <script>
+        $("#page").html("<h2> Start Location");
+        var dropdownVal = "";
+        var stopsArr = []
         // click function for "How many stops?" submit button
         $("#submitStops").click(function (event) {
             event.preventDefault();
+
+
             populateStops($('#dropdown').val());
+            dropdownVal = $('#dropdown').val();
 
-
-            // populateStops function
+            // populateStops function where 'x' is the number selected in the dropdown.
             function populateStops(x) {
                 // Remove previous divs if "dropdown" number changes.
                 $("<div/>").attr('id', 'Stops').appendTo('page');
@@ -41,35 +53,72 @@
                     let stop = "stop" + j;
                     $('.' + stop).remove();
                 }
-
+                var i = 0;
                 // Generate [i] number of input fields, where [i] is 'dropdown' number.
-                for (let i = 1; i <= x; i++) {
+                for (var i = 1; i <= x; i++) {
                     var stop = "stop" + i;
                     var street = "street" + i;
                     var city = "city" + i;
                     var state = "state" + i;
                     $("#Stops").append("<div class=" + stop + ">");
-                    console.log(stop);
+                    // console.log(stop);
                     $('.' + stop).html("<h2>Stop " + i + ": <br></h2>" +
                         "Street:<input id='" + street + "' class='input' type='text'><br>" +
                         "City:<input id='" + city + "' class='input' type='text'><br>" +
                         "State:<input id='" + state + "' class='input' type='text'><br>");
-                    console.log(
-                        i + ":\n" + street +
-                        "\n" + city + ", " + state);
                 }
+                // prevents additional 'submit' buttons from appending on page
+                $("#submitApi").remove();
+                // create submit button after all 'stops' inputs
+                $("#Stops").append("<input id='submitApi' type='submit'></div>")
+                console.clear();
+                console.log(
+                    i - 1 + " stops entered" +
+                    "\n-----------------------");
             }
+        });
+
+        // click function to initialize API call with 'stops' 
+        function API() {
+            $('#submitApi').click(function (event) {
+                event.preventDefault();
+                console.log("TEST");
+                alert("Yay");
+            });
         }
-        );
+
+        // *********** API Stuff ************* //
+            // event.preventDefault();
+            // for (var i = 1; i <= dropdownVal; i++) {
+            //     // var apiAddress = (($('#street' + i).val()).split(" ").join("+")) + ",+" + (($('#city' + i).val()).split(" ").join("+")) + ",+";
+            //     var apiAddress = "apiAddress";
+            //     console.log(apiAddress);
+            //     console.log("TEST")
+            // }
+
+
+
+
+
+// Reference from start
+            // // Get info from input fields
+            // var startStreet = $("#startStreet").val();
+            // var startCity = $("#startCity").val();
+            // var startState = $("#startState").val();
+
+
+
+
+
+
+
+
     </script>
 
 
 
 
 
-    <script>
-        $("#page").html("<h2> Start Location");
-    </script>
 
 
 
