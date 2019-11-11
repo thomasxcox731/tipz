@@ -34,13 +34,12 @@
 
 
     <script>
-        $("#page").html("<h2> Start Location");
+        $("#page").html("<br>");
         var dropdownVal = "";
         var stopsArr = []
         // click function for "How many stops?" submit button
         $("#submitStops").click(function (event) {
             event.preventDefault();
-
 
             populateStops($('#dropdown').val());
             dropdownVal = $('#dropdown').val();
@@ -79,52 +78,62 @@
         });
 
         // click function to initialize API call with 'stops' 
-        function API() {
-            $('#submitApi').click(function (event) {
-                event.preventDefault();
-                console.log("TEST");
-                alert("Yay");
+        $(document).on('click', '#submitApi', function (event) {
+            event.preventDefault();
+            var apiKey = "AIzaSyCHZqKS_YadIq4eOAtVad2cxcHixlT6poI"
+
+
+            // Start Location
+            var startStreet = $("#startStreet").val();
+            var startCity = $("#startCity").val();
+            var startState = $("#startState").val();
+
+            var ip = "https://maps.googleapis.com/maps/api/geocode/json?address=" + startStreet.split(" ").join("+") + ",+" + startCity.split(" ").join("+") + ",+" + startState + "&sensor=false&key=" + apiKey;
+            // Ajax call for to convert address to lat/long
+            $.ajax({
+                url: ip,
+                method: "GET"
+            }).then(function (response) {
+                var addr = response.results[0].formatted_address;
+                var lat = response.results[0].geometry.location.lat;
+                var long = response.results[0].geometry.location.lng;
+                var coords = lat + "," + long + ";";
+                // push lat/long to 'stopsArr' array.
+                stopsArr.push(coords);
+                console.log("START: \n" + addr + "\n" + lat + ", " + long);
+
+                // *********** STOPS API ************* //
+                for (var i = 1; i <= dropdownVal; i++) {
+                    var apiAddress = (($('#street' + i).val()).split(" ").join("+")) + ",+" + (($('#city' + i).val()).split(" ").join("+")) + ",+" + $('#state' + i).val();
+                    // console.log(apiAddress);
+                    var ip = "https://maps.googleapis.com/maps/api/geocode/json?address=" + apiAddress + "&sensor=false&key=" + apiKey;
+
+                    $.ajax({
+                        url: ip,
+                        method: "GET"
+                    }).then(function (response) {
+                        var addr = response.results[0].formatted_address;
+                        var lat = response.results[0].geometry.location.lat;
+                        var long = response.results[0].geometry.location.lng;
+                        var coords = lat + "," + long + ";";
+                        stopsArr.push(coords);
+                        // console.log(addr + "\n" + lat + ", " + long);
+                    });
+                };
+                console.log("STOPS:\n" + stopsArr);
             });
-        }
-
-        // *********** API Stuff ************* //
-            // event.preventDefault();
-            // for (var i = 1; i <= dropdownVal; i++) {
-            //     // var apiAddress = (($('#street' + i).val()).split(" ").join("+")) + ",+" + (($('#city' + i).val()).split(" ").join("+")) + ",+";
-            //     var apiAddress = "apiAddress";
-            //     console.log(apiAddress);
-            //     console.log("TEST")
-            // }
+        });
 
 
 
 
-
-// Reference from start
+            // ************** Reference from start **************** // 
             // // Get info from input fields
             // var startStreet = $("#startStreet").val();
             // var startCity = $("#startCity").val();
             // var startState = $("#startState").val();
 
-
-
-
-
-
-
-
     </script>
-
-
-
-
-
-
-
-
-
-
-
 </body>
 
 </html>
