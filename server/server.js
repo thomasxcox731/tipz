@@ -24,7 +24,7 @@ db.on("error", function(error) {
 //Routes (URL's are placeholders for now)
 
 //1. Create User Account (create User1 Collection in UserDB)
-app.post("/home", function(req, res){
+app.post("/", function(req, res){
     db.User.insert(req.body, function(error, saved){
         if(error){
             console.log("error");
@@ -104,7 +104,7 @@ app.post("/home", function(req, res){
     });
 
 //4. Display User1 Data (get User1 Collection from db and display it)
-app.get("find/:id", function (req, res){
+app.get("account/:id", function (req, res){
     db.User.findOne(
         {_id: mongojs.ObjectId(req.params.id)},
         function (err, found){
