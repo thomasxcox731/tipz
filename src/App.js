@@ -12,9 +12,9 @@ function App() {
       <div>
         <NavTabs />
         <Route exact path="/" component={Home} />
-        <Route exact path="/about" component={Mileage} />
-        <Route exact path="/blog" component={Tips} />
-        <Route exact path="/contact" component={Account} />
+        <Route exact path="/mileage" component={Mileage} />
+        <Route exact path="/tips" component={Tips} />
+        <Route exact path="/account" component={Account} />
       </div>
     </Router>
   );
