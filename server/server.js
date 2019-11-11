@@ -11,7 +11,7 @@ app.use(express.static("public"));
 
 // Database configuration
 var databaseUrl = "UsersDB";
-var collections = ["users"];
+var collections = ["Users"];
 
 // Hook mongojs config to db variable
 var db = mongojs(databaseUrl, collections);
@@ -25,7 +25,7 @@ db.on("error", function(error) {
 
 //1. Create User Account (create User1 Collection in UserDB)
 app.post("/", function(req, res){
-    db.User.insert(req.body, function(error, saved){
+    db.Users.insert(req.body, function(error, saved){
         if(error){
             console.log("error");
         }
@@ -38,7 +38,7 @@ app.post("/", function(req, res){
 //2. Create Mileage Log (updating documents inside User1 Collection)
     //This is the only route that will utilize the API
     app.post("/mileage", function(req, res){
-        db.User.Jim.update(
+        db.Users.Jim.update(
             {
             _id: mongojs.ObjectId(req.params.id)
             },
@@ -72,7 +72,7 @@ app.post("/", function(req, res){
 
 //3. Create Tip Log (create documents inside User1 Collection)
     app.post("/tips", function(req, res){
-        db.User.Jim.update(
+        db.Users.Jim.update(
             {
             _id: mongojs.ObjectId(req.params.id)
             },
@@ -105,7 +105,7 @@ app.post("/", function(req, res){
 
 //4. Display User1 Data (get User1 Collection from db and display it)
 app.get("account/:id", function (req, res){
-    db.User.findOne(
+    db.Users.findOne(
         {_id: mongojs.ObjectId(req.params.id)},
         function (err, found){
             if (err){
