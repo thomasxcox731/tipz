@@ -72,10 +72,10 @@
 
 
 
-                var latLong = lat + "," + long;
+                var coords = lat + "," + long + ";";
 
                 // *********************************** MAP BOX ***********************//
-                var url = "https://api.mapbox.com/optimized-trips/v1/mapbox/driving/" + latLong + "?access_token=pk.eyJ1Ijoic2h0ZXZldG0iLCJhIjoiY2syM2V5c2huMHdiazNmcWMzbHd3ZXl5ZiJ9.rnLws1iCGFFsUGsted9fRw"
+                var url = "https://api.mapbox.com/optimized-trips/v1/mapbox/driving/" + coords + "?access_token=pk.eyJ1Ijoic2h0ZXZldG0iLCJhIjoiY2syM2V5c2huMHdiazNmcWMzbHd3ZXl5ZiJ9.rnLws1iCGFFsUGsted9fRw"
                 $.ajax({
                     url: url,
                     method: "GET"
@@ -85,7 +85,6 @@
                     }
                     console.log(response2)
                 });
-
             })
         });
     </script>
