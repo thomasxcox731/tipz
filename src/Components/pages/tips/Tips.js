@@ -3,17 +3,27 @@ import "./Tips.css";
 
 function Tips() {
   return (
-    <div className="container">
-      <h1>Tips/Gratuity</h1>
-      <div className="form-group">
-        <label for="inputTip">Tips/Gratuity:</label>
-        <input type="text" className="form-control" id="inputTip" ></input>
+    <div className="container" >
+      <div className="row">
+      <div className="col-3"></div>
+        <div className="col-6"><h1>Tips/Gratuities</h1></div>
       </div>
-      <div className="form-group">
-        <label for="inputDate">Date</label>
-        <input type="text" className="form-control" id="inputDate" ></input>
+      <div className="row">
+      <div className="col-3"></div>
+        <div className="col-6">
+        <form>
+        <div className="form-group">
+          <label for="username"></label>
+          <input type="number" className="form-control" id="inputTip"  placeholder="Tips"></input>
+        </div>
+        <div className="form-group">
+          <label for="exampleInputPassword1"></label>
+          <input type="date" className="form-control" id="inputDate" placeholder=""></input>
+        </div>
+        <div><button type="log" className="btn btn-primary">Log</button></div>
+      </form>
+        </div>
       </div>
-      <button type="submit" className="btn btn-primary">Submit</button>
     </div>
   );
 }

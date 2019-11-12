@@ -13,11 +13,11 @@ function Home() {
         <div className="col-6">
         <form>
         <div className="form-group">
-          <label for="username">Username</label>
+          <label for="username"></label>
           <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username"></input>
         </div>
         <div className="form-group">
-          <label for="exampleInputPassword1">Password</label>
+          <label for="exampleInputPassword1"></label>
           <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"></input>
         </div>
         <div><button type="login" className="btn btn-primary">Login</button></div>
