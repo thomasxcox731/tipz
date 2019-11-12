@@ -21,7 +21,7 @@ function Mileage() {
         </div>
       </div>
       <div>
-        <button type="startTrip" className="btn btn-primary">Start Trip</button>
+        <button type="startTrip" className="btn btn-success">Start Trip</button>
         <button type="endTrip" className="btn btn-danger">End Trip</button>
       </div>
 
