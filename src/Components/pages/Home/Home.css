@@ -2,7 +2,7 @@
    background-color: rgb(168, 233, 168); 
    height: 300px;
 }
-.container {
+.container  {
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;;
     margin-top: 80px;
 }
@@ -10,21 +10,45 @@ body {
     background-color: lightcoral;
     text-align: center;
     background-image: url("https://images.unsplash.com/photo-1560680981-3ab64b3feb5a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1572&q=80");
-    color: orange;
-    background-size: 100%;
+    color: red;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 960px) {
+    body {
+        background-size: 130%;
+    }
+}
 
+@media screen and (max-width: 800px) {
+    body {
+        background-size: 130%;
+    }
 }
 
 @media screen and (max-width: 768px) {
-    background-size: cover;
+    body {
+        background-size: 160%;
+    }
 }
 
 @media screen and (max-width: 640px) {
-    
+    body {
+        background-size: 130%;
+    }
+}
+
+@media screen and (max-width: 640px) and (min-width: 540px) {
+    body {
+        background-size: 160%;
+    }
+}
+
+@media screen and (max-width: 540px) and (min-width: 340px) {
+    body {
+        background-size: 240%;
+    }
 }
     
 

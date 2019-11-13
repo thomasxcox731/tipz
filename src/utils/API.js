@@ -1,5 +1,5 @@
 import $ from "jquery";
-import axios from 'axios';
+// import axios from 'axios';
 import {Mileage, startStreet, startCity, startState} from "../Components/pages/Mileage/Mileage";
 
 var stopsArr = [];
