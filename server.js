@@ -2,7 +2,11 @@
 var express = require("express");
 var mongojs = require("mongojs");
 var passport = require("passport")
-    , LocalStrategy = require('passport-local').Strategy;;
+    , LocalStrategy = require('passport-local').Strategy;
+// const PORT = process.env.PORT || 3001;
+// const mongoose = require("mongoose");
+// const routes = require("./routes");
+
 var app = express();
 
 // Parse request body as JSON
@@ -10,6 +14,19 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Make public a static folder
 app.use(express.static("public"));
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+  }
+// // Add routes, both API and view
+// app.use(routes);
+
+// // Connect to the Mongo DB
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
+
+// Start the API server
+// app.listen(PORT, function() {
+//     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+//   });
 
 //Passport User Authentication
 app.post('/', 
@@ -70,7 +87,6 @@ app.post("/", function(req, res){
                 $set: {
                     mileage: {
                         log: {
-                            date: req.body.date, 
                             milesTravelled: req.body.milesTravelled,
                             purpose: req.body.purpose,
                             modified: Date.now()
@@ -103,9 +119,9 @@ app.post("/", function(req, res){
             {
                 $set: {
                     tips: {
-                        log: {
-                            date: req.body.date, 
+                        log: { 
                             tips: req.body.tips,
+                            date: Date.now(),
                             modified: Date.now()
                         }
                     }
