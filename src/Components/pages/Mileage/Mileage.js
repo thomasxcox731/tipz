@@ -18,6 +18,7 @@ class Mileage extends Component {
         totalDist: 0
     }
 
+
     // After you setup the state, you should define your methods for this component. 
     //You can think of components as a complex object. Just like the constructors we used
     //to build in plain Javascript. Any functions you put in here can update the state
@@ -70,11 +71,11 @@ class Mileage extends Component {
     fetchAddress = (dropdownVal) => {
         console.log("Blastoff")
         API.getCoords(dropdownVal)
-            // .then(res =>
-            //     this.setState({ stopsArr: res.data, totalDist: res.data }),
-            //     console.log("API Call good to go")
+        // .then(res =>
+        //     this.setState({ stopsArr: res.data, totalDist: res.data }),
+        //     console.log("API Call good to go")
 
-            // )
+        // )
     }
 
     //The render method is required with a Class Component, 
@@ -112,20 +113,21 @@ class Mileage extends Component {
                 </div>
                 <div id="submitButtonDiv" >
                     <input id="submitAPI" type="submit" onClick={this.fetchAddress(this.state.dropdownVal)}
-                        
+
                         {...(this.state.dropdownVal < 1)
                             ? $('#submitButton2').css({ 'display': 'none' })
-                            : $('#submitButton2').css({ 'display': 'block'})
-                            } />
+                            : $('#submitButton2').css({ 'display': 'block' })
+                        } />
                 </div>
             </div>
 
 
         )
     }
+
 }
-export {startStreet} 
-export {startCity} 
-export {startState} 
+export { startStreet }
+export { startCity }
+export { startState }
 
 export default Mileage
