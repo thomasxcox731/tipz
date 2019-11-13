@@ -8,6 +8,7 @@ function Mileage() {
         <div className="col-3"></div>
         <div className="col-6"><h1> Mileage</h1></div>
       </div>
+      <br></br>
       <div className="row">
         <div className="col-4"></div>
         <div className="col-4">
@@ -20,6 +21,7 @@ function Mileage() {
           </form>
         </div>
       </div>
+      <br></br>
       <div>
         <button type="startTrip" className="btn btn-success">Start Trip</button>
         <button type="endTrip" className="btn btn-danger">End Trip</button>
