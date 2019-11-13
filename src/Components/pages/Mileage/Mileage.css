@@ -1,5 +1,5 @@
-#mileageContainer {
-    background-color: rgb(168, 233, 168); 
-    height: 200px; 
-    width: 350px;
+.card {
+    width: 40%;
+    text-align: left;
+
 }

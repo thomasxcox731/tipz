@@ -4,6 +4,8 @@
 .env
 
 # dependencies
+/server/node_modules
+/node_modules
 node_modules
 /.pnp
 .pnp.js
