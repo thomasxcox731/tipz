@@ -16,6 +16,7 @@ class Mileage extends Component {
         totalDist: 0
     }
 
+
     // After you setup the state, you should define your methods for this component. 
     //You can think of components as a complex object. Just like the constructors we used
     //to build in plain Javascript. Any functions you put in here can update the state
@@ -108,6 +109,36 @@ class Mileage extends Component {
             </body>
         )
     }
+=======
+function Mileage() {
+  return (
+    <div className="container" id="mileageContainer">
+      <div className="row">
+        <div className="col-3"></div>
+        <div className="col-6"><h1> Mileage</h1></div>
+      </div>
+      <br></br>
+      <div className="row">
+        <div className="col-4"></div>
+        <div className="col-4">
+          <form>
+            <select class="form-control form-control">
+              <option>Work</option>
+              <option>Medical</option>
+              <option>Moving</option>
+            </select>
+          </form>
+        </div>
+      </div>
+      <br></br>
+      <div>
+        <button type="startTrip" className="btn btn-success">Start Trip</button>
+        <button type="endTrip" className="btn btn-danger">End Trip</button>
+      </div>
+
+    </div>
+  );
+
 }
 
 export default Mileage
