@@ -20,6 +20,7 @@
     </div>
 
     <div id="page"></div>
+    <div id="results"></div>
     <div id="Stops">
         How Many Stops on your route?
         <select id="dropdown">
@@ -32,7 +33,6 @@
         </select>
         <input id="submitStops" type="submit">
     </div>
-
 
     <script>
         $("#page").html("<br>");
@@ -86,6 +86,8 @@
         $(document).on('click', '#submitApi', function (event) {
             event.preventDefault();
             var apiKey = "AIzaSyCHZqKS_YadIq4eOAtVad2cxcHixlT6poI"
+            $("#results").html("<h1>WORKING...<hr>")
+
 
 
             // Start Location
@@ -145,6 +147,9 @@
                                 }
                                 totalDist = (totalDist * 0.000621371).toFixed(2);
                                 console.log("Total distance: " + totalDist + " Miles");
+                                $("#results").html("<input id='submitDB' type='submit'></div><hr>")
+                                $("#results").prepend("<form> Please select a category for your trip: <select id='purpose' class='form-control'> <option>Work</option><option>Medical</option><option>Moving</option></select></form>");
+                                $("#results").prepend("<h1>Trip: " + totalDist + " Miles</h1>");
                             });
                         }, 2000)
                     })
@@ -153,8 +158,6 @@
             $("#submitApi").remove();
 
         });
-
-
 
             // ************** Reference from start **************** // 
             // // Get info from input fields
