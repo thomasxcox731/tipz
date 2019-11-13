@@ -5,14 +5,16 @@ import API from "../../../utils/API"
 //I don't think you need this ^^
 import "./Mileage.css";
 //import your API from your utils folder. Look at the final book-app that we
-//built in class for an example of a good api.
+//built in className for an example of a good api.
+
+var startStreet = $("#startStreet").val();
+var startCity = $("#startCity").val();
+var startState = $("#startState").val();
+
 class Mileage extends Component {
     state = {
         results: "",
         dropdownVal: "",
-        stopsArr: [],
-        route: "",
-        url: "",
         totalDist: 0
     }
 
@@ -22,52 +24,59 @@ class Mileage extends Component {
     //to build in plain Javascript. Any functions you put in here can update the state
     //and therefore can change the way the application behaves or looks.
 
+    handleStopSelect = (event) => {
+        this.setState({
+            dropdownVal: event.target.value
+        }, () => {
+            console.log(this.state.dropdownVal);
+        })
+    }
+
     //These are examples of what your methods might look like based on the code you sent.
-    populateStops = x => {
-        // super()
-        // change state.dropdownVal to dropdown selection - SEE LINE 89
-        this.setState({dropdownVal: this.menu.value})
-
-
+    populateStops = (x) => {
 
         // Remove previous divs if "dropdown" number changes.
-        $("<div/>").attr('id', 'Stops').appendTo('page');
+        $("<div/>").attr('id', 'stops').appendTo('page');
         for (let j = 5; j >= 0; j--) {
             let stop = "stop" + j;
-            $('.' + stop).remove();
+            $('#' + stop).remove();
         }
-        var i = 0;
         // Generate [i] number of input fields, where [i] is 'dropdown' number.
-        for (var i = 1; i <= x; i++) {
+        for (var i = 1; i <= this.state.dropdownVal; i++) {
             var stop = "stop" + i;
             var street = "street" + i;
             var city = "city" + i;
             var state = "state" + i;
-            $("#Stops").append("<div class=" + stop + ">");
+            $("#stops").append("<div id=" + stop + ">");
+
+            // TODO *************** data value ****************
             // console.log(stop);
-            $('.' + stop).html("<h2>Stop " + i + ": <br /></h2>" +
-                "Street:<input id='" + street + "' class='input' type='text' /><br />" +
-                "City:<input id='" + city + "' class='input' type='text' /><br />" +
-                "State:<input id='" + state + "' class='input' type='text' /><br />");
+            $('#' + stop).html("<h2>Stop " + i + ": <br /></h2>" +
+                "Street:<input id='" + street + "' className='input' type='text' /><br />" +
+                "City:<input id='" + city + "' className='input' type='text' /><br />" +
+                "State:<input id='" + state + "' className='input' type='text' /><br />");
         }
         // prevents additional 'submit' buttons from appending on page
         $("#submitApi").remove();
         // create submit button after all 'stops' inputs
-        $("#Stops").append("<input id='submitApi' type='submit' /></div>")
+        $("#stops").append(`<input id='submitApi' onClick={() => this.fetchAddress(this.state.dropdownVal)} type='submit' /></div>`)
         console.clear();
         console.log(
             i - 1 + " stops entered" +
             "\n-----------------------");
-
-
-
-
-
     }
 
     handleSubmit = () => { }
 
-    fetchAddress = () => { }
+    fetchAddress = (dropdownVal) => {
+        console.log("Blastoff")
+        API.getCoords(dropdownVal)
+        // .then(res =>
+        //     this.setState({ stopsArr: res.data, totalDist: res.data }),
+        //     console.log("API Call good to go")
+
+        // )
+    }
 
     //The render method is required with a Class Component, 
     //it will examine the state and props (if there are any) and render the 
@@ -79,66 +88,46 @@ class Mileage extends Component {
             // Be sure to wrap them in a div */}
 
 
-            // ******************** Revise 'class' to 'className'??? ******************//
-            <body>
-                <div class="card">
-                    <h2>Please Enter Start Location: <br /></h2>
-                    Street:<input id="startStreet" class="input" type="text" /><br />
-                    City:<input id="startCity" class="input" type="text" /><br />
-                    State:<input id="startState" class="input" type="text" /><br />
-                    <div id="page"></div>
-                    <div id="results"></div>
-                    <div id="Stops">
-                        How Many Stops on your route?
-                        <select id = "dropdown" ref = {(input)=> this.menu = input}>
-                            <option selected hidden disabled>Please Select a response</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                        <input id="submitStops" type="submit" onClick={this.populateStops()}/>
-                    </div>
+            <div className="card">
+                <h2>Please Enter Start Location: <br /></h2>
+                Street:<input id="startStreet" className="input" type="text" /><br />
+                City:<input id="startCity" className="input" type="text" /><br />
+                State:<input id="startState" className="input" type="text" /><br />
+                <div id="page"></div>
+                <div id="results"></div>
+                <div id="stops">
+                    How Many Stops on your route?
+                        <select id="dropdown"
+                        // ref={(input) => this.menu = input} 
+                        onChange={this.handleStopSelect}
+                    >
+                        <option selected hidden disabled>Please Select a response</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <input id="submitStops" type="submit" onClick={this.populateStops()} />
 
                 </div>
-                <div id="results">
-                    {this.state.results}
-                </div>
+                <div id="submitButtonDiv" >
+                    <input id="submitAPI" type="submit" onClick={this.fetchAddress(this.state.dropdownVal)}
 
-            </body>
+                        {...(this.state.dropdownVal < 1)
+                            ? $('#submitButton2').css({ 'display': 'none' })
+                            : $('#submitButton2').css({ 'display': 'block' })
+                        } />
+                </div>
+            </div>
+
+
         )
     }
-=======
-function Mileage() {
-  return (
-    <div className="container" id="mileageContainer">
-      <div className="row">
-        <div className="col-3"></div>
-        <div className="col-6"><h1> Mileage</h1></div>
-      </div>
-      <br></br>
-      <div className="row">
-        <div className="col-4"></div>
-        <div className="col-4">
-          <form>
-            <select class="form-control form-control">
-              <option>Work</option>
-              <option>Medical</option>
-              <option>Moving</option>
-            </select>
-          </form>
-        </div>
-      </div>
-      <br></br>
-      <div>
-        <button type="startTrip" className="btn btn-success">Start Trip</button>
-        <button type="endTrip" className="btn btn-danger">End Trip</button>
-      </div>
-
-    </div>
-  );
 
 }
+export { startStreet }
+export { startCity }
+export { startState }
 
 export default Mileage

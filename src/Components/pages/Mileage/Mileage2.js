@@ -73,7 +73,7 @@ function Mileage() {
                     }
                     var i = 0;
                     // Generate [i] number of input fields, where [i] is 'dropdown' number.
-                    for (var i = 1; i <= x; i++) {
+                    for (let i = 1; i <= x; i++) {
                         var stop = "stop" + i;
                         var street = "street" + i;
                         var city = "city" + i;
@@ -133,7 +133,7 @@ function Mileage() {
                             url: ip,
                             method: "GET"
                         }).then(function (response) {
-                            var addr = response.results[0].formatted_address;
+                            // var addr = response.results[0].formatted_address;
                             var lat = response.results[0].geometry.location.lat;
                             var long = response.results[0].geometry.location.lng;
                             var coords = long + "," + lat + ";";
