@@ -1,5 +1,6 @@
 import React from "react";
 import "./Mileage.css";
+import Media from 'react-media';
 
 function Mileage() {
   return (
