@@ -3,7 +3,7 @@ import "./Home.css";
 
 function Home() {
   return (
-    <div className="container" >
+    <div className="container" id="homeContainer" >
       <div className="row">
       <div className="col-3"></div>
         <div className="col-6"><h1>Tipz n Tripz</h1></div>

@@ -1,12 +1,25 @@
+#homeContainer {
+   background-color: rgb(168, 233, 168); 
+   height: 300px;
+}
 .container {
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;;
     margin-top: 80px;
 }
 body {
-    background-color: lightblue;
+    background-color: lightcoral;
     text-align: center;
     background-image: url("https://images.unsplash.com/photo-1560680981-3ab64b3feb5a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1572&q=80");
-    color: peru;
+    color: orange;
     background-size: 100%;
     background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 640px) {
+}
+    
+@media screen and (max-width: 768px) {
+}
+    
+@media screen and (max-width: 980px) {
 }

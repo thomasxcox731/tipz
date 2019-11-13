@@ -14,7 +14,7 @@ function Tips() {
         <form>
         <div className="form-group">
           <label for="username"></label>
-          <input type="number" className="form-control" id="inputTip"  placeholder="Tips"></input>
+          <input type="number" className="form-control" id="inputTip"  placeholder="$0.00"></input>
         </div>
         <div className="form-group">
           <label for="exampleInputPassword1"></label>
