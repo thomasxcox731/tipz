@@ -1,11 +1,17 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+var mongoose = require("mongoose");
 
-const TipsSchema = new Schema({
-  tips: { type: String, required: true },
-  date: { type: Date, default: Date.now }
+// Save a reference to the Schema constructor
+var Schema = mongoose.Schema;
+
+// Using the Schema constructor, create a new LibrarySchema object
+// This is similar to a Sequelize model
+var TipsSchema = new Schema({
+  Tips: Number,
+  date: Date, 
 });
 
-const Tips = mongoose.model("Tips", TipsSchema);
+// This creates our model from the above schema, using mongoose's model method
+var Tips = mongoose.model("Tips", TipsSchema);
 
+// Export the Book model
 module.exports = Tips;
