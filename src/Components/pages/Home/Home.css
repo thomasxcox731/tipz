@@ -39,15 +39,15 @@ body {
     }
 }
 
-@media screen and (max-width: 640px) and (min-width: 540px) {
+@media screen and (max-width: 640px) and (min-width: 550px) {
     body {
-        background-size: 160%;
+        background-size: 180%;
     }
 }
 
-@media screen and (max-width: 540px) and (min-width: 340px) {
+@media screen and (max-width: 550px) and (min-width: 340px) {
     body {
-        background-size: 240%;
+        background-size: 295%;
     }
 }
     
