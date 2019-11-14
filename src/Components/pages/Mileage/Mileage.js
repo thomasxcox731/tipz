@@ -114,6 +114,7 @@ class Mileage extends Component {
                 Street:<input id="startStreet" className="input" type="text" /><br />
                 City:<input id="startCity" className="input" type="text" /><br />
                 State:<input id="startState" className="input" type="text" /><br />
+
                 <div id="page"></div>
                 <div id="results">
                     {/* <API startStreet={startStreet} />

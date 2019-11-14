@@ -1,6 +1,7 @@
 #homeContainer {
    background-color: rgb(168, 233, 168); 
    height: 300px;
+   border: black 10px;
 }
 .container  {
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;;
