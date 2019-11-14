@@ -15,7 +15,7 @@ function NavTabs() {
           to="/mileage"
           className={window.location.pathname === "/mileage" ? "nav-link active" : "nav-link"}
         >
-          Mileage
+          Tripz
         </Link>
       </li>
       <li className="nav-item">
@@ -23,7 +23,7 @@ function NavTabs() {
           to="/tips"
           className={window.location.pathname === "/tips" ? "nav-link active" : "nav-link"}
         >
-          Tips
+          Tipz
         </Link>
       </li>
       <li className="nav-item">
