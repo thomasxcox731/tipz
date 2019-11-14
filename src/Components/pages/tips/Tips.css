@@ -1,5 +1,13 @@
 #tipsContainer {
     background-color: rgb(168, 233, 168); 
-    height: 260px; 
-    width: 350px;
+    height: fit-content; 
+    width: 50%;
+    margin: 1% auto;
+}
+
+#mileageContainer {
+    background-color: rgb(168, 233, 168); 
+    height: fit-content; 
+    width: 50%;
+    margin: 1% auto;
 }
