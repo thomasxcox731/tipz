@@ -91,7 +91,7 @@ class Mileage extends Component {
             // Be sure to wrap them in a div */}
 
 
-            <div className="card">
+            <div className="border border-dark card">
                 <h1>Tripz</h1>
                 <h2>Please Enter Start Location: <br /></h2>
                 Street:<input id="startStreet" className="input" type="text" /><br />
