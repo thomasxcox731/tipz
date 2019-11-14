@@ -91,11 +91,11 @@ class Mileage extends Component {
 
 
             <div className="border border-dark card">
-                <h1>Tripz</h1>
-                <h2>Please Enter Start Location: <br /></h2>
-                Street:<input id="startStreet" className="input" type="text" /><br />
-                City:<input id="startCity" className="input" type="text" /><br />
-                State:<input id="startState" className="input" type="text" /><br />
+                <h1 className="tripHead">Tripz</h1>
+                <h2 className="tripHead">Please Enter Start Location: <br /></h2>
+                <input id="startStreet" className="input" type="text" placeholder="Street" /><br />
+                <input id="startCity" className="input" type="text" placeholder="City" /><br />
+                <input id="startState" className="input" type="text" placeholder="State" /><br />
                 <div id="page"></div>
                 <div id="results">
                     {/* <API startStreet={startStreet} />
