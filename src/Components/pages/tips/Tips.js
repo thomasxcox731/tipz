@@ -1,6 +1,5 @@
 import React from "react";
 import "./Tips.css";
-import Media from 'react-media';
 
 function Tips() {
   return (

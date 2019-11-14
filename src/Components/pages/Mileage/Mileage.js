@@ -4,7 +4,6 @@ import API from "../../../utils/API"
 //importing this deconsctructed as React, {Component} is mostly for readability.
 //I don't think you need this ^^
 import "./Mileage.css";
-import Media from 'react-media';
 //import your API from your utils folder. Look at the final book-app that we
 //built in className for an example of a good api.
 
