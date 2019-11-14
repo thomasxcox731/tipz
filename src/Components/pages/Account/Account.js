@@ -1,6 +1,5 @@
 import React from "react";
 import "./Account.css";
-import Media from 'react-media';
 
 function Account() {
   return (
