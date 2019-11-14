@@ -92,6 +92,7 @@ class Mileage extends Component {
 
 
             <div className="card">
+                <h1>Tripz</h1>
                 <h2>Please Enter Start Location: <br /></h2>
                 Street:<input id="startStreet" className="input" type="text" /><br />
                 City:<input id="startCity" className="input" type="text" /><br />

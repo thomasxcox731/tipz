@@ -7,11 +7,11 @@ function Tips() {
     <div className="container" id="tipsContainer">
       <div className="row">
       <div className="col-3"></div>
-        <div className="col-6"><h1 id="tipsHeading">Tips</h1></div>
+        <div className="col-6"><h1 id="tipsHeading">Tipz</h1></div>
       </div>
       <div className="row">
-      <div className="col-3"></div>
-        <div className="col-6">
+      <div className="col-2"></div>
+        <div className="col-8">
         <form>
         <div className="form-group">
           <label for="username"></label>
