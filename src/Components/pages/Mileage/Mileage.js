@@ -59,7 +59,7 @@ class Mileage extends Component {
         // prevents additional 'submit' buttons from appending on page
         $("#submitApi").remove();
         // create submit button after all 'stops' inputs
-        $("#stops").append(`<input id='submitApi' onClick={() => this.fetchAddress(this.state.dropdownVal)} type='submit' /></div>`)
+        // $("#stops").append(`<input id='submitApi' onClick={() => this.fetchAddress(this.state.dropdownVal)} type='submit' /></div>`)
         console.clear();
         console.log(
             i - 1 + " stops entered" +
@@ -69,14 +69,16 @@ class Mileage extends Component {
     handleSubmit = () => { }
 
     fetchAddress = (dropdownVal) => {
-        console.log("Blastoff")
+        console.log("API Blastoff")
         API.getCoords(dropdownVal)
-        // .then(res =>
-        //     this.setState({ stopsArr: res.data, totalDist: res.data }),
-        //     console.log("API Call good to go")
-
-        // )
+            .then(res =>
+                
+                // Unhandled Rejection(TypeError): Cannot read property 'data' of undefined
+                // this.setState({ stopsArr: res.data, totalDist: res.data }),
+                console.log("API function called")
+            )
     }
+
 
     //The render method is required with a Class Component, 
     //it will examine the state and props (if there are any) and render the 
@@ -94,24 +96,27 @@ class Mileage extends Component {
                 City:<input id="startCity" className="input" type="text" /><br />
                 State:<input id="startState" className="input" type="text" /><br />
                 <div id="page"></div>
-                <div id="results"></div>
+                <div id="results">
+                    {/* <API startStreet={startStreet} />
+                    <API startCity={startCity} />
+                    <API startState={startState} /> */}
+                </div>
                 <div id="stops">
-                    How Many Stops on your route?
+                    How Many Stops on your route?<br />
                         <select id="dropdown"
-                        // ref={(input) => this.menu = input} 
-                        onChange={this.handleStopSelect}
-                    >
-                        <option selected hidden disabled>Please Select a response</option>
+                        onChange={this.handleStopSelect}>
+            
+                        <option value hidden>Select a response</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
                         <option value="5">5</option>
-                    </select>
+                    </select><br /> <br />
                     <input id="submitStops" type="submit" onClick={this.populateStops()} />
 
                 </div>
-                <div id="submitButtonDiv" >
+                <div id="submitButtonDiv" ><hr />
                     <input id="submitAPI" type="submit" onClick={this.fetchAddress(this.state.dropdownVal)}
 
                         {...(this.state.dropdownVal < 1)
