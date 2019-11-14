@@ -3,7 +3,7 @@ import "./Tips.css";
 
 function Tips() {
   return (
-    <div className="container" id="tipsContainer">
+    <div className="border border-dark container" id="tipsContainer">
       <div className="row">
       <div className="col-3"></div>
         <div className="col-6"><h1 id="tipsHeading">Tipz</h1></div>
