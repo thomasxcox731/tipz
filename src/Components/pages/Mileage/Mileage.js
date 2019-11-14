@@ -103,11 +103,10 @@ class Mileage extends Component {
                     <API startState={startState} /> */}
                 </div>
                 <div id="stops">
-                    How Many Stops on your route?<br />
+                    How many stops on your route?<br />
                         <select id="dropdown"
                         onChange={this.handleStopSelect}>
             
-                        <option value hidden>Select a response</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
