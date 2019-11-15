@@ -24,13 +24,16 @@ class MileageChart extends React.Component {
             position: 'outer-center',
           },
           type: 'category',
-          categories: ['January', 'Febuary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
         },
         y: {
           label: 'Total Mileage (miles)',
         }
 
-      }
+      },
+      legend: {
+        position: 'right'
+    }
     });
   }
   componentDidMount() {
