@@ -1,5 +1,5 @@
 import axios from 'axios';
-import mysql from 'mysql';
+// import mysql from 'mysql';
 
 //SEQUELIZE
 
