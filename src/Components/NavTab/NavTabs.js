@@ -11,19 +11,19 @@ function NavTabs() {
         </Link>
       </li>
       <li className="nav-item">
-        <Link
+        {/* <Link
           to="/mileage"
           className={window.location.pathname === "/mileage" ? "nav-link active" : "nav-link"}
         >
           Tripz
-        </Link>
+        </Link> */}
       </li>
       <li className="nav-item">
         <Link
           to="/tips"
           className={window.location.pathname === "/tips" ? "nav-link active" : "nav-link"}
         >
-          Tipz
+          Tipz and Tripz
         </Link>
       </li>
       <li className="nav-item">
