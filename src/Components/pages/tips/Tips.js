@@ -77,7 +77,7 @@ class Tips extends Component {
                   <label>
                     <h4>Date</h4>
                   </label>
-                  <input type="date" name="tipsDate" onChange={this.handleInputChange} className="form-control" id="inputDate" onchange placeholder=""></input>
+                  <input type="date" name="tipsDate" onChange={this.handleInputChange} className="form-control" id="inputDate" placeholder=""></input>
                 </div>
                 <button type="submit" className="btn btn-primary" id="log" onClick={this.handleTipSubmit}>Log Tips</button>
               </form>
@@ -116,15 +116,13 @@ class Tips extends Component {
                       <option value="Medical">Medical</option>
                       <option value="Moving">Moving</option>
                     </select></div>
-                  <form>
-                    <button type="submit" name="mileageDate" onChange={this.handleInputChange} className="btn btn-primary" id="log" onClick={this.handleMileageSubmit}>Log Mileage</button></form>
+                  <button type="submit" name="mileageDate" onChange={this.handleInputChange} className="btn btn-primary" id="log" onClick={this.handleMileageSubmit}>Log Mileage</button>
                 </div>
               </form>
             </div>
           </div>
         </div>
       </div>
-
 
 
 
