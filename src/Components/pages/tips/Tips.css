@@ -11,3 +11,8 @@
     width: 50%;
     margin: 1% auto;
 }
+
+#logMileage , #logTips {
+    color: green;
+    font-size: 4vw
+}

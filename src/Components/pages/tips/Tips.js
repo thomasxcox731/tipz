@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Tips.css";
 import API from "../../../utils/API"
+import $ from 'jquery'
 
 
 class Tips extends Component {
@@ -33,7 +34,7 @@ class Tips extends Component {
       mileage: event.target.value
       // category: ,
       // mileageDate: ,
-    })
+    });
     console.log(this.state.mileage);
     API.postMileage({
       mileage: this.state.mileage,
@@ -41,7 +42,7 @@ class Tips extends Component {
       mileageDate: this.state.mileageDate
     }).catch(err => console.log("Mileage Form: " + err));
     console.log(this.state.category)
-
+    $("#logMileage").html("<h5>" + this.state.category + ": " + this.state.mileage + " miles added!</h5>");
   };
 
   handleTipSubmit = event => {
@@ -50,6 +51,7 @@ class Tips extends Component {
       tips: this.state.tips,
       tipsDate: this.state.tipsDate,
     }).catch(err => console.log("Tips Form: " + err));
+    $("#logTips").html("<h5>$" + this.state.tips + " added for " + this.state.tipsDate + "</h5>");
     console.log(this.state.tips);
   };
 
@@ -65,7 +67,7 @@ class Tips extends Component {
 
           <div className="row">
             <div className="col-2"></div>
-            <div className="col-8">
+            <div id="tipsCard" className="col-8">
               <form>
                 <div className="form-group">
                   <label>
@@ -78,8 +80,10 @@ class Tips extends Component {
                     <h4>Date</h4>
                   </label>
                   <input type="date" name="tipsDate" onChange={this.handleInputChange} className="form-control" id="inputDate" placeholder=""></input>
+                  <button type="button" className="btn btn-primary" id="log" onClick={this.handleTipSubmit}>Log Tips</button>
                 </div>
-                <button type="submit" className="btn btn-primary" id="log" onClick={this.handleTipSubmit}>Log Tips</button>
+
+                <div id="logTips"></div>
               </form>
             </div>
           </div>
@@ -94,7 +98,7 @@ class Tips extends Component {
 
           <div className="row">
             <div className="col-2"></div>
-            <div className="col-8">
+            <div id="mileageCard" className="col-8">
               <form>
                 <div className="form-group">
                   <label>
@@ -116,7 +120,8 @@ class Tips extends Component {
                       <option value="Medical">Medical</option>
                       <option value="Moving">Moving</option>
                     </select></div>
-                  <button type="submit" name="mileageDate" onChange={this.handleInputChange} className="btn btn-primary" id="log" onClick={this.handleMileageSubmit}>Log Mileage</button>
+                  <button type="button" name="mileageDate" onChange={this.handleInputChange} className="btn btn-primary" id="log" onClick={this.handleMileageSubmit}>Log Mileage</button>
+                  <div id="logMileage"></div>
                 </div>
               </form>
             </div>

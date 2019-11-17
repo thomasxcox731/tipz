@@ -48,7 +48,7 @@ app.post("/tips", function(req, res){
             comment: "For work"
         }).then(function(dbTip){
             dbAccount.tips.push(dbTip._id);
-            dbAccounnt.save().then(function(dbTip){
+            dbAccount.save().then(function(dbTip){
                 res.json(dbTip);
             })
         })
@@ -66,7 +66,7 @@ app.post("/mileage", function(req, res){
             purpose: "Medical"
         }).then(function(dbMileage){
             dbAccount.tips.push(dbMileage._id);
-            dbAccounnt.save().then(function(dbMileage){
+            dbAccount.save().then(function(dbMileage){
                 res.json(dbMileage);
             })
         })
