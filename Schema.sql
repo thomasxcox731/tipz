@@ -1,4 +1,4 @@
-CREATE DATABASE user123;
+-- CREATE DATABASE user123;
 USE user123;
 
 CREATE TABLE userData (
@@ -20,3 +20,7 @@ CREATE TABLE tipsData (
   tipsDate DATE NOT NULL,
   PRIMARY KEY (id)
 );
+
+SELECT * FROM userData;
+SELECT * FROM mileageData;
+SELECT * FROM tipsData;
