@@ -1,10 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './NavTabs.css'
 
 
 function NavTabs() {
   return (
+    <div id="container">
+      <Link
+          to="/"
+          className={window.location.pathname === "/account" ? "nav-link active" : "nav-link"}
+        ><img id="logo" alt="logo" src='Hexel1.gif' />
+        </Link>
     <ul className="nav nav-tabs bg-white">
+            <li className="nav-item">
+        
+        <br />
+      </li>
       <li className="nav-item">
         <Link to="/" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
           Home
@@ -35,6 +46,7 @@ function NavTabs() {
         </Link>
       </li>
     </ul>
+    </div>
   );
 }
 
