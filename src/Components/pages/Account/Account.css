@@ -1,4 +1,35 @@
 #mileageData, #mileageGraph, #tipsData, #tipsGraph {
-    margin-bottom: 80px;
+    margin-bottom: 1%;
     text-shadow: none;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+.work {
+    text-align: right;
+    color: blue;
+}
+
+.medical {
+    text-align: right;
+    color: orangered;
+}
+
+.moving {
+    text-align: right;
+    color: green;
+}
+
+.month {
+    text-align: right;
+    color: black;
+}
+
+.exportButton {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, "Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1.5vw;
+    width: 47%;
+    margin-bottom: 2%;
 }
