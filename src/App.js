@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavTabs from "./Components/NavTab/NavTabs";
 import Home from "./Components/pages/Home/Home";
-import Mileage from "./Components/pages/Mileage/Mileage";
+// import Mileage from "./Components/pages/Mileage/Mileage";
 import Tips from "./Components/pages/tips/Tips";
 import Account from "./Components/pages/Account/Account";
 

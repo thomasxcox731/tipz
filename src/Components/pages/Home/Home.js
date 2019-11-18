@@ -13,11 +13,9 @@ function Home() {
         <div className="col-6">
         <form>
         <div className="form-group">
-          <label for="username"></label>
           <input type="email" className="form-control" id="username" aria-describedby="emailHelp" placeholder="Username"></input>
         </div>
         <div className="form-group">
-          <label for="password"></label>
           <input type="password" className="form-control" id="password" placeholder="Password"></input>
         </div>
         <div><button type="login" className="btn btn-primary">Login</button></div>
