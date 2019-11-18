@@ -127,7 +127,7 @@ class Tips extends Component {
             </div>
           </div>
         </div>
-        <img class="pixChar" alt="Tom" src="Tompix.gif" />
+        <img className="pixChar" alt="Tom" src="Tompix.gif" />
 
       </div>
 
