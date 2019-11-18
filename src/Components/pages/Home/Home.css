@@ -4,14 +4,14 @@
     border: black 10px;
 }
 
-/* #pixChar {
+#pixChar {
     position: fixed;
     right: 70%;
     bottom: 0;
     margin: 0;
     padding: 0;
     width: 40%;
-} */
+}
 
 .container {
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;

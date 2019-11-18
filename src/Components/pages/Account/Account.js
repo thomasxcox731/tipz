@@ -2,6 +2,7 @@ import React from "react";
 import "./Account.css";
 import MileageChart from "../../MileageChart/chart";
 import TipsChart from "../../TipsChart/tchart";
+import Abhishu from "./AbhishuPix.gif"
 
 
 class Account extends React.Component {
@@ -11,7 +12,7 @@ class Account extends React.Component {
   render() {
     return (
       <div className="container">
-        <img id="pixChar" alt="Abhishu" src="Abhishupix.gif" />
+        <img id="pixChar" alt="Abhishu" src={Abhishu} />
         <h1>Account</h1>
         <div className="container" id="accountMileage">
           <h2>Mileage</h2>

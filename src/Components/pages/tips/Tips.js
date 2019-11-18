@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./Tips.css";
 import API from "../../../utils/API"
 import $ from 'jquery'
+import Tom from "./TomPix.gif"
+
 
 
 class Tips extends Component {
@@ -58,7 +60,7 @@ class Tips extends Component {
   render() {
     return (
       <div id="page">
-        <img id="pixChar" alt="Tom" src="Tompix.gif" />
+        <img id="pixChar" alt="Tom" src={Tom} />
 
         <div className="container" id="tipsContainer">
           <div className="row">
