@@ -310,7 +310,7 @@ class Account extends React.Component {
           </div >
         </div >
         <button className="exportButton" onClick={() => window.print()}>PRINT THIS PAGE</button>
-        <button className="exportButton"><a target="_blank" href={`mailto:?Subject=Here%20are%20my%20Tip%20and%20Mileage%20totals&Body=***PULL DATA FROM DB*** 
+        <button className="exportButton"><a rel="noopener noreferrer" target="_blank" href={`mailto:?Subject=Here%20are%20my%20Tip%20and%20Mileage%20totals&Body=***PULL DATA FROM DB*** 
         Work Total- 2260
         Medical Total: 320
         Moving Total: 320`}>EMAIL THIS PAGE</a></button>
