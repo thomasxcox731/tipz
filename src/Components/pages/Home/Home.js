@@ -25,7 +25,7 @@ function Home() {
       </form>
         </div>
       </div>
-      <img class="pixChar" alt="Shteve" src="Shtevepix.gif" />
+      <img className="pixChar" alt="Shteve" src="Shtevepix.gif" />
     </div>
   );
 }
