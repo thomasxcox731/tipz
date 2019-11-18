@@ -1,12 +1,24 @@
 #homeContainer {
-   background-color: rgb(168, 233, 168); 
-   height: 300px;
-   border: black 10px;
+    background-color: rgb(168, 233, 168);
+    height: 300px;
+    border: black 10px;
 }
-.container  {
-    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;;
+
+.pixChar {
+    position: fixed;
+    right: 75%;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    width: 30%;
+}
+
+.container {
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    ;
     margin-top: 80px;
 }
+
 body {
     background-color: lightcoral;
     text-align: center;
@@ -51,6 +63,3 @@ body {
         background-size: 295%;
     }
 }
-    
-
-    

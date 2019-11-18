@@ -16,3 +16,12 @@
     color: green;
     font-size: 4vw
 }
+
+.pixChar {
+    position: fixed;
+    right: 75%;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    width: 30%;
+}
