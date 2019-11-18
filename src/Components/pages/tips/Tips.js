@@ -58,6 +58,7 @@ class Tips extends Component {
   render() {
     return (
       <div id="page">
+        <img className="pixChar" alt="Tom" src="Tompix.gif" />
 
         <div className="container" id="tipsContainer">
           <div className="row">
@@ -127,8 +128,6 @@ class Tips extends Component {
             </div>
           </div>
         </div>
-        <img className="pixChar" alt="Tom" src="Tompix.gif" />
-
       </div>
 
 
