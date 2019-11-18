@@ -33,3 +33,11 @@
     width: 47%;
     margin-bottom: 2%;
 }
+.pixChar {
+    position: fixed;
+    right: 70%;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    width: 40%;
+}

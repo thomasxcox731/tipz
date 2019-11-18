@@ -220,6 +220,7 @@ class Account extends React.Component {
         Medical Total: 320
         Moving Total: 320`}>EMAIL THIS PAGE</a></button>
 
+<img class="pixChar" alt="Abhishu" src="Abhishupix.gif" />
 
       </div >
 
