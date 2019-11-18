@@ -58,7 +58,7 @@ class Tips extends Component {
   render() {
     return (
       <div id="page">
-        <img className="pixChar" alt="Tom" src="Tompix.gif" />
+        <img id="pixChar" alt="Tom" src="Tompix.gif" />
 
         <div className="container" id="tipsContainer">
           <div className="row">
