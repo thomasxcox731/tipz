@@ -4,7 +4,7 @@
     border: black 10px;
 }
 
-.pixChar {
+#pixChar {
     position: fixed;
     right: 70%;
     bottom: 0;

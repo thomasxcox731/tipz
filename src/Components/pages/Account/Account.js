@@ -11,7 +11,7 @@ class Account extends React.Component {
   render() {
     return (
       <div className="container">
-        <img className="pixChar" alt="Abhishu" src="Abhishupix.gif" />
+        <img id="pixChar" alt="Abhishu" src="Abhishupix.gif" />
         <h1>Account</h1>
         <div className="container" id="accountMileage">
           <h2>Mileage</h2>
